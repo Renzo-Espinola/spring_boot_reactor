@@ -1,4 +1,4 @@
-package models;
+package com.bolsadeideas.springboot.reactor.models;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package models;
+package com.bolsadeideas.springboot.reactor.models;
 
 public class UsuarioComentarios {
 	

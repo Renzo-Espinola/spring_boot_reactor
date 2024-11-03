@@ -1,4 +1,4 @@
-package com.bolsadeideas.springboot.reactor.app;
+package com.bolsadeideas.springboot.reactor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,9 +9,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import models.Comentarios;
-import models.Usuario;
-import models.UsuarioComentarios;
+import com.bolsadeideas.springboot.reactor.models.Comentarios;
+import com.bolsadeideas.springboot.reactor.models.Usuario;
+import com.bolsadeideas.springboot.reactor.models.UsuarioComentarios;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -33,12 +33,12 @@ public class SpringBootReactorApplication implements CommandLineRunner {
 		Flux<Integer> rangos = Flux.range(0, 4);
 		Flux.just(1,2,3,4)
 		.map(i -> (i*2))
-		.zipWith(rangos, (uno, dos) -> String.format("Primer Flix: %d, Segundo Flux: %d", uno, dos))
+		.zipWith(rangos, (uno, dos) -> String.format("Primer Flux: %d, Segundo Flux: %d", uno, dos))
 		.subscribe(texto -> log.info(texto));
 	}
 	
 	public void ejemploUsuarioComentarioZipWithForma2() {
-		Mono<Usuario> usuarioMono = Mono.fromCallable(() -> new Usuario("Jhon", "Connors"));
+		Mono<Usuario> usuarioMono = Mono.fromCallable(() -> new Usuario("John", "Connors"));
 		
 		Mono<Comentarios> comentariosUsuarioMono = Mono.fromCallable(()->{
 			Comentarios comentarios = new Comentarios();

@@ -1,4 +1,4 @@
-package com.bolsadeideas.springboot.reactor.app;
+package com.bolsadeideas.springboot.reactor;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
